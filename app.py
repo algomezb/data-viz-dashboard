@@ -5,7 +5,6 @@ import streamlit as st
 st.title("Irish Evolution housing prices and labor force")
 
 df = pd.read_csv("./csv/prices-counties-2025.csv")
-print(df.head())
 county_avg = df.groupby("county")["price"].transform("mean")
 df_sorted = (
     df.assign(county_avg=county_avg)
